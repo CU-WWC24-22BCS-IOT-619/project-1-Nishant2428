@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Ease of Living Index Calculator</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Ease of Living Index Calculator</h1>
+     
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Purchasing Power Index" placeholder="Purchasing Power Index" required="required" />
+    	<input type="text" name="Safety Index" placeholder="Safety Index" required="required" />
+        <input type="text" name="Health Care Index" placeholder="Health Care Index" required="required" />
+        <input type="text" name="Climate Index" placeholder="Climate Index" required="required" />
+		<input type="text" name="Education Index" placeholder="Education Index" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+</div>
+<div class="show">
+    <p id="text">Developed by <span id="element"></span></p>
+</div>
+</body>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#element', {
+        strings: ['Nishant Kumar (22BCS15009)'],
+        typeSpeed: 30,
+        loop: true,
+    });
+</script>
+</html>
